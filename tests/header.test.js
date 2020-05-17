@@ -6,7 +6,7 @@ describe("Header", () => {
   beforeEach(async () => {
     page = await Page.build();
     await page.goto("localhost:3000");
-  }, 30000);
+  });
 
   afterEach(async () => {
     await page.close();
