@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const sessionFactory = require("../factories/sessionFactory");
 const userFactory = require("../factories/userFactory");
 
-class CustomPage {
+class Page {
   static async build() {
     const browser = await puppeteer.launch({
       headless: true,
@@ -10,7 +10,7 @@ class CustomPage {
     });
 
     const page = await browser.newPage();
-    const customPage = new CustomPage(page);
+    const customPage = new Page(page);
 
     return new Proxy(customPage, {
       get: function (target, property) {
@@ -40,4 +40,4 @@ class CustomPage {
   }
 }
 
-module.exports = CustomPage;
+module.exports = Page;
