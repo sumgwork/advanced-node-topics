@@ -1,4 +1,4 @@
-const Page = require("./helpers/page");
+const Page = require("./helpers/Page");
 
 let page;
 
